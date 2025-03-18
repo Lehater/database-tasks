@@ -1,0 +1,55 @@
+[Назад](../README.md)
+
+# База данных 3. Бронирование отелей
+
+## Задача 1
+
+### Условия
+
+
+### Решение
+```sql
+SELECT 
+    c.name,
+    c.email,
+    c.phone,
+    COUNT(b.ID_booking) AS total_bookings,
+    STRING_AGG(DISTINCT h.name, ', ') AS hotels,
+    ROUND(AVG(b.check_out_date - b.check_in_date), 4) AS avg_stay_duration
+FROM Booking b
+JOIN Customer c ON b.ID_customer = c.ID_customer
+JOIN Room r ON b.ID_room = r.ID_room
+JOIN Hotel h ON r.ID_hotel = h.ID_hotel
+GROUP BY c.ID_customer, c.name, c.email, c.phone
+HAVING COUNT(b.ID_booking) > 2 AND COUNT(DISTINCT h.ID_hotel) > 1
+ORDER BY total_bookings DESC;
+
+```
+### Результат
+
+
+
+---
+
+## Задача 2
+### Условия
+### Решение
+```sql
+
+```
+
+### Результат
+
+---
+
+## Задача 3
+### Условия
+### Решение
+```sql
+
+```
+
+### Результат
+
+
+[Назад](../README.md)
