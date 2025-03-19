@@ -191,20 +191,17 @@ WITH car_stats AS (
     GROUP BY c.name, c.class
 ),
 class_race_count AS (
-    SELECT
-        cl.class,
-        COUNT(r.race) AS total_races
+    select cl.class,COUNT(r.race) AS total_races
     FROM Classes cl
     JOIN Cars c ON c.class = cl.class
     JOIN Results r ON r.car = c.name
     GROUP BY cl.class
 ),
 class_stats AS (
-    SELECT
-        car_stats.car_class,
-        COUNT(*) FILTER (WHERE car_stats.avg_position > 3.0) AS low_position_count
+    select car_class,COUNT(car_name) AS low_position_count
     FROM car_stats
-    GROUP BY car_stats.car_class
+    WHERE avg_position > 3.0
+    GROUP BY car_class
 )
 SELECT
     cs.car_name AS car_name,
@@ -223,6 +220,16 @@ ORDER BY cst.low_position_count DESC, cs.car_name;
 
 ```
 ### Результат
+
+|car_name|car_class|average_position|race_count|car_country|total_races|low_position_count|
+|--------|---------|----------------|----------|-----------|-----------|------------------|
+|Audi A4|Sedan|8.0000|1|Germany|2|1|
+|Chevrolet Camaro|Coupe|4.0000|1|USA|1|1|
+|Ford F-150|Pickup|6.0000|1|USA|1|1|
+|Renault Clio|Hatchback|5.0000|1|France|1|1|
+
+**Примечание**: есть несовпадение с контрольными результатами в задании по полю `low_position_count` для класса седан. При расчете вручную по данным в задании получается 1, а в контрольных результатах - 2.
+. Вероятно, использовалось условие `WHERE avg_position` **>=** `3.0`. 
 
 ---
 
