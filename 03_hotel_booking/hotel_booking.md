@@ -8,6 +8,10 @@
 
 
 ### Решение
+
+[task3.1.sql](task3.1.sql)
+
+
 ```sql
 SELECT 
     c.name,
@@ -37,6 +41,9 @@ ORDER BY total_bookings DESC;
 ## Задача 2
 ### Условия
 ### Решение
+
+[task3.2.sql](task3.2.sql)
+
 ```sql
 WITH customer_bookings AS (
   SELECT 
@@ -76,6 +83,9 @@ ORDER BY total_spent ASC;
 ## Задача 3
 ### Условия
 ### Решение
+
+[task3.3.sql](task3.3.sql)
+
 ```sql
 WITH hotel_avg_price AS (
     SELECT 

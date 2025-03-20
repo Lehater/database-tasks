@@ -23,6 +23,9 @@ ManagerID: Идентификатор менеджера.
 Решение задачи должно представлять из себя один sql-запрос и задействовать ключевое слово RECURSIVE.
 
 ### Решение
+
+[task4.1.sql](task4.1.sql)
+
 ```sql
 WITH RECURSIVE employee_hierarchy AS (
     -- Базовый уровень: сам Иван Иванов
@@ -127,6 +130,9 @@ ORDER BY eh.EmployeeName;
 Решение задачи должно представлять из себя один sql-запрос и задействовать ключевое слово `RECURSIVE`.
 
 ### Решение
+
+[task4.2.sql](task4.2.sql)
+
 ```sql
 WITH RECURSIVE employee_hierarchy AS (
     -- Базовый уровень: сам Иван Иванов
@@ -241,6 +247,9 @@ ORDER BY eh.EmployeeName;
 Решение задачи должно представлять из себя один sql-запрос и задействовать ключевое слово `RECURSIVE`.
 
 ### Решение
+
+[task4.3.sql](task4.3.sql)
+
 ```sql
 WITH RECURSIVE employee_hierarchy AS (
     -- Базовый уровень: выбираем сотрудников с ролью 'Менеджер' и с подчиненными

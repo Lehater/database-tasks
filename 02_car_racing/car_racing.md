@@ -9,6 +9,9 @@
 Решение задачи должно представлять из себя один SQL-запрос.
 
 ### Решение
+
+[task2.1.sql](task2.1.sql)
+
 ```sql
 SELECT car_name, car_class, average_position, race_count
 FROM (
@@ -50,6 +53,9 @@ ORDER BY average_position;
 
 Решение задачи должно представлять из себя один SQL-запрос.
 ### Решение
+
+[task2.2.sql](task2.2.sql)
+
 ```sql
 SELECT sub.car_name,
        sub.car_class,
@@ -86,6 +92,10 @@ WHERE sub.rk = 1;
 
 Решение задачи должно представлять из себя один SQL-запрос.
 ### Решение
+
+[task2.3.sql](task2.3.sql)
+
+
 ```sql
 WITH class_stats AS (
     SELECT
@@ -130,6 +140,10 @@ ORDER BY c.name;
 
 Решение задачи должно представлять из себя один SQL-запрос.
 ### Решение
+
+[task2.4.sql](task2.4.sql)
+
+
 ```sql
 WITH class_stats AS (
     SELECT
@@ -179,6 +193,10 @@ ORDER BY cs.car_class, cs.car_avg_pos;
 
 Решение задачи должно представлять из себя один SQL-запрос.
 ### Решение
+
+[task2.5.sql](task2.5.sql)
+
+
 ```sql
 WITH car_stats AS (
     SELECT

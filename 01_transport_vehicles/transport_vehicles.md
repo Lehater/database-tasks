@@ -12,6 +12,9 @@
 Также отсортируйте результаты по мощности в порядке убывания.
 
 ### Решение
+
+[task1.1.sql](task1.1.sql)
+
 ```sql
 SELECT v.maker, m.model
 FROM Vehicle v
@@ -59,6 +62,10 @@ ORDER BY m.horsepower DESC;
     Результаты должны быть объединены в один набор данных и отсортированы по мощности в порядке убывания. Для велосипедов, у которых нет значения мощности, они будут располагаться внизу списка.
 
 ### Решение
+
+[task1.2.sql](task1.2.sql)
+
+
 ```sql
 SELECT v.maker, c.model, c.horsepower, c.engine_capacity, 'Car' AS vehicle_type
 FROM Vehicle v
